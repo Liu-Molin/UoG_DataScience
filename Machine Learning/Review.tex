@@ -28,19 +28,36 @@
 \section*{Introduction}
 
 This is a review work for the Machine Learning course in
-Univeristy of Glasgow.
+\textit{Univeristy of Glasgow}.
 
 \section{Regression}
-\subsection{Overview}
+\subsection{Linear Regression}
 
-For $x = (x_1, x_2, ..., x_d)$, 
+For $x = (x_1, x_2, ..., x_m)$, 
 where $x_i$ is the $i_{th}$ attribute of $x$, 
 a lenear model tries to train a linear combination function
 from these attributes, i.e:
-$$f(x) = w_1 x_1 + w_2 x_2 +...+ w_d x_d+b$$
+$$f(x) = w_1 x_1 + w_2 x_2 +...+ w_m x_m+b$$
 which can be written in vector as:
 $$f(x)=w^Tx+b$$
-where $w=(w_1, w_2,...,w_d)$.
+where $w=(w_1, w_2,...,w_m)$.
 
+The linear regression model is trained by \textit{loss function}.
+Generally, we define our \textit{loss function} as:
+$$min\sum_{i=1}^{m}{(y_i-f(x_i))^2}$$
+
+\subsubsection{Loss Function}
+
+There are several kinds of \textit{loss functions} we can choose from.
+
+- \textbf{L1-norm}: L1-norm can be represented as follow:
+$$S=\sum_{i=1}^{m}\left|y_{i}-f\left(x_{i}\right)\right|$$
+
+- \textbf{L2-norm}: L2-norm is what we used above:
+$$S=\sum_{i=1}^{m}\left(y_{i}-f\left(x_{i}\right)\right)^{2}$$
+
+\subsection{Conclusion}
+
+\section{Polynomial Regression}
 
 \end{document}
