@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{float}
+\usepackage{amsmath}
 \graphicspath{ {./img/} }
 %Setup the layout of the pages
 \topmargin 0.0cm
@@ -17,7 +18,6 @@
 
 \title{
     Machine Learning Review\\
-    \large University of Glasgow
 }
 \author{Molin Liu}
 
@@ -31,6 +31,7 @@ This is a review work for the Machine Learning course in
 \textit{Univeristy of Glasgow}.
 
 \section{Regression}
+
 \subsection{Linear Regression}
 
 For $x = (x_1, x_2, ..., x_m)$, 
@@ -56,8 +57,78 @@ $$S=\sum_{i=1}^{m}\left|y_{i}-f\left(x_{i}\right)\right|$$
 - \textbf{L2-norm}: L2-norm is what we used above:
 $$S=\sum_{i=1}^{m}\left(y_{i}-f\left(x_{i}\right)\right)^{2}$$
 
-\subsection{Conclusion}
+\subsubsection{Least Square Solution}
+The solution of \textbf{Least Square} is:
+$$
+\vec{w}=\left(X^{\top} X\right)^{-1} X^{\top} Y
+$$
 
-\section{Polynomial Regression}
+\textbf{Prove:}
 
+The error vector $(Y-X \vec{w})$ should be orthogonal to every column of $X$:
+$$
+(Y-X \vec{w}) \cdot X_{j}=0
+$$
+
+which can be written as a matrix equation:
+$$
+(Y-X \vec{w})^{\top} X=\overrightarrow{0}
+$$
+
+Then we can easily derive the equation from the following process:
+$$
+\begin{aligned} X^{\top}(Y-X \vec{w}) &=X^{\top} Y-X^{\top} X \vec{w}=0 \\ \Longrightarrow &\left(X^{\top} X\right) \vec{w}=X^{\top} Y \\ \Longrightarrow \quad \vec{w}=\left(X^{\top} X\right)^{-1} X^{\top} Y \end{aligned}
+$$
+\subsubsection{Conclusion}
+
+\subsection{Polynomial Regression}
+
+The \textbf{Polynomial Regression} can be written as:
+$$
+t=w_{0}+w_{1} x+w_{2} x^{2}+w_{3} x^{2}+\ldots+w_{K} x^{K}=\sum_{k=0}^{\kappa} w_{k} x^{k}
+$$
+
+Define the loss funcion:
+$$
+\mathcal{L}=\frac{1}{N}(\mathbf{t}-\mathbf{X} \mathbf{w})^{\top}(\mathbf{t}-\mathbf{X} \mathbf{w})
+$$
+\subsubsection{Generalization \& Overfitting}
+
+We can find out that the \textbf{loss} will always decrease
+as the model is made more complex.
+
+How to choose the right model complexity?
+\textbf{Cross-validation}
+
+\subsubsection{Cross-Validation}
+
+\section{Classification}
+
+The \textbf{Classification} task is to classify
+a set of \textit{N} objects $x_i$ with attributes.
+Each object has an associated label $t_i$
+
+\textbf{Probabilistic classifier} produce a probability of class membership:
+
+$P(t_{\text {new}}=k | \mathbf{x}_{\text {new }}, \mathbf{X}, \mathbf{t})$
+
+\textbf{non-Probabilistic classifier} produce a hard assignment:
+
+$t_{new}=1$ or $t_{new}=0$
+
+\subsection{KNN}
+
+K-Nearest Neighbours(KNN)
+
+- Non-probabilistic classifier;
+
+- Supervised trainning;
+
+- Fast;
+
+- We can use CV to find the right $K$;
+
+\subsubsection{Problem}
+- As $K$ increases, the small classes will disppear.
 \end{document}
+
