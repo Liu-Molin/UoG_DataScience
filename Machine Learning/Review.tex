@@ -130,5 +130,62 @@ K-Nearest Neighbours(KNN)
 
 \subsubsection{Problem}
 - As $K$ increases, the small classes will disppear.
+
+\subsection{Logistic Regression}
+
+\subsection{SVM}
+\subsubsection{Hard Margin}
+If the training data is linearly seperable,
+we can select two parallel hyperplanes that separate the two classes of data,
+so that the distance between them is as large as possible.
+
+These hyperplanes can be described by the equations:
+$$
+\vec{w} \cdot \vec{x}_{i}-b \geq 1, \text { if } y_{i}=1
+$$
+or
+$$
+\vec{w} \cdot \vec{x}_{i}-b \leq-1, \text { if } y_{i}=-1
+$$
+
+We can easily infer that 
+$$
+y_{i}\left(\vec{w} \cdot \vec{x}_{i}-b\right) \geq 1, \quad \text { for all } 1 \leq i \leq n
+$$
+
+We want to maximise $\gamma=\frac{1}{\|\mathbf{w}\|}$,
+equivalent to minimising $\|\mathbf{w}\|$
+
+Note: $y_i$ is the label in the data, which is in $\{-1, 1\}$,
+rather than vertical axis value of the data.
+\begin{figure}[H]
+    \center
+    \includegraphics{img/600px-SVM_margin.png}
+    \caption{Hard margin}
+    \label{fig:svm_hard_margin}
+\end{figure}
+
+\subsubsection{Soft Margin}
+Soft-margin function for the data are not linearly seperable.
+
+\subsubsection{Inner Product}
+
+\section{ROC}
+Sensitivity/Recall
+
+$$
+S_{e}=\frac{T P}{T P+F N}
+$$
+
+Specificity
+
+$$
+S_{p}=\frac{T N}{T N+F P}
+$$
+
+\section{Unsupervised Learning}
+\subsection{K-Means}
+
+\subsection{Gaussion Mixture Model}
 \end{document}
 
