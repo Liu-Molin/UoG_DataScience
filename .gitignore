@@ -135,3 +135,7 @@ dmypy.json
 *synctex.gz
 
 .DS_Store
+
+# Datafile
+*.zip
+*.csv
