@@ -43,7 +43,6 @@ Implement Forward Propagation
 Without activation functions, the `Neural Network` will only perfom linear mapping from `input` to `output`. Because in that situation, the only mathematical operation during the forward propagation would be `dot-product`.
 
 #### Different kinds of activation functions
-![Activation Functions](img/activation_functions.png)
 
 **Features**
 
@@ -75,6 +74,9 @@ Without activation functions, the `Neural Network` will only perfom linear mappi
      - Otherwise like ReLU.
     - Disadvantages:
       - Results not consistent—leaky ReLU does not provide consistent predictions for negative input values.
+
+### Bias
+[Why we need bias?](https://stackoverflow.com/a/42063849/5989507)
 
 
 Pooling
